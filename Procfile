@@ -1,0 +1,1 @@
+web: gunicorn fashionista_exercise.wsgi --log-file -

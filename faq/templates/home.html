@@ -1,0 +1,173 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Fashionistas!</title>
+        <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+
+        <script src="{% static 'js/angular.js' %}"></script>
+        <script src="{% static 'js/angular-panel-snap.js' %}"></script>
+        <script src="{% static 'js/app.js' %}"></script>
+        <script src="{% static 'js/faqController.js' %}"></script>
+
+
+        <link href ="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" type="text/css" rel="stylesheet">
+        <link href ="{% static 'css/myStyle.css' %}" type="text/css" rel="stylesheet">
+
+    </head>
+    <body ng-app="faqApp">
+    <ak-panel-group full-window="true">
+        <ak-panel>
+        <div class="container">
+            <div class="row">
+                <a href="https://www.stylepuzzle.com"><img class="logo" src="https://d2i5khuir6rc3s.cloudfront.net/static/images/logo_h.png"></a>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 space-top">
+                </div>
+                <div class="col-xs-12">
+
+                    <hr><br>
+                    <h1 class="fashionistas black">F A S H I O N I S T A S</h1>
+                    <h1><i>Earn while you shop</i></h1>
+                </div>
+
+                <div class="col-md-9">
+                    <p>StylePuzzle is an online community that connects Fashionistas (you!) with customers who don't have time to shop for recent fashions.
+                    We're looking for fashion shoppers who are reliable, knowledgeable about brands, go shopping on a regular basis, and love exploring their city.</p>
+                    <br>
+                </div>
+                <div class="col-md-3">
+                    <div class="buttons center">
+                        <a href="#how"><button class="btn-how-start">How does it work?</button></a><a href="#sign_up_form"><button class="btn-sign_up-start">Sign Up</button></a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 space-bottom">
+                </div>
+            </div>
+        </div>
+        </ak-panel>
+
+        <ak-panel>
+        <div id="how" class="container myContainer content-trans space-top-less">
+        </div>
+
+        <div class="whiteto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <h1 class="center black">The Dream Job of Every Girl</h1>
+                        <h3 class="center black">...in just a few simple steps...</h3>
+                        <hr>
+                        <br>
+
+
+                    </div>
+                    <div class="center col-sm-4 glyph-card-pinky">
+                        <img class="glyph-center" src="https://d2i5khuir6rc3s.cloudfront.net/static/images/step1icon.png">
+                        <h3 class="black">Sign Up</h3>
+                        <p>
+                            Tell us more about yourself and your style.
+                        </p>
+                    </div>
+                    <div class="col-sm-4 center glyph-card">
+                        <img class="glyph-center" src="https://d2i5khuir6rc3s.cloudfront.net/static/images/step2icon.png">
+                        <h3 class="black">Get Matched</h3>
+                        <p>
+                            Get matched with users that match your tastes.
+                        </p>
+                    </div>
+                    <div class="col-sm-4 center glyph-card-pinky">
+                        <img class="glyph-center" src="https://d2i5khuir6rc3s.cloudfront.net/static/images/step4icon.png">
+                        <h3 class="black">Shop<i>!</i></h3>
+                        <p>
+                            Use your expertise to shop for your matches and start earning money.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container myContainer space-bottom-more ">
+
+            </div>
+        </div>
+        </ak-panel>
+
+        <ak-panel>
+        <div class="myContainer" >
+            <div class="ribbon-top"></div>
+            <div class="white" id="faq">
+                <div class="container" >
+                    <div ng-controller="faqController" class="row">
+                        <div class="col-xs-12">
+                            <h2 class="center black">More Questions?</h2><hr>
+                        </div>
+
+                        <div class="col-xs-6 col-xs-offset-3">
+                        </div>
+                        <div class = "col-xs-3"></div>
+
+                        <div class="col-lg-4 col-md-4">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div>
+                            <h3 ng-click="paid()"><span class="sign" ng-bind="p_sign"></span> How do Fashionistas get paid?</h3>
+                            <p ng-show="paid_info">
+                                Every transaction made earns you a commission. The amount of the commission is based on many things, including the number of items the customer orders, the total cost of the items and more.
+                            </p>
+                            <h3 ng-click="schedule()"><span class="sign" ng-bind="s_sign"></span> Can I shop whenever I want?</h3>
+                            <p ng-show="schedule_info">
+                                You'll only work during times that work for you! Just set your availability each week for days and times that fit your own lifestyle and your own shopping schedule.
+                            </p>
+                            <h3 ng-click="qualifications()"><span class="sign" ng-bind="q_sign"></span> Who qualifies as a Fashionista?</h3>
+                            <p ng-show="qualifications_info">Girls who..</p>
+                            <ul ng-show="qualifications_info">
+                                <li>Have good fashion sense</li>
+                                <li>Are knowledgeable about fashion</li>
+                                <li>Love fashion shopping, and shop on a regular basis</li>
+                                <li>Have excellent communication skills</li>
+                                <li>Can work from home or from remote for 10 to 20 hours per week</li>
+                                <li>Having a personal fashion blog is a plus!</li>
+                            </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2"></div>
+
+                        <div class="col-xs-6 col-xs-offset-3">
+                            <hr>
+                        </div>
+                        <div class = "col-xs-3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="ribbon-bottom"></div>
+        </div>
+        </ak-panel>
+        <ak-panel>
+            <div class="solidto container myContainer space-top-less"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 center sign_up_text">
+                        <h2>Sign up Today</h2>
+                        <div class= "hidden-xs">
+                        <br><br><hr><br><br>
+                        <p>We will review your application and get back to you as soon as possible.
+                            Afterwards, please also register as a user to experience our matching system.</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <form id="sign_up_form" action="https://www.stylepuzzle.com" method = "POST">
+                            {% csrf_token %}
+                            {{ fashionista_form.as_p }}
+                            <input id="btn-submit" type="submit" value="Join" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </ak-panel>
+
+    </ak-panel-group>
+    </body>
+</html>
