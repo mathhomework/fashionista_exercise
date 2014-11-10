@@ -56,12 +56,13 @@ WSGI_APPLICATION = 'fashionista_exercise.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+##for local
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
@@ -87,11 +88,27 @@ STATIC_URL = '/static/'
 # except ImportError:
 #     pass
 
+#Heroku
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd3t845e0bt7t8g',
+        'USER': 'vuygnuwnypsoxo',
+        'PASSWORD': 'TMSfZa0NBHcukiOBWIVa3oX22d',
+        'HOST': 'ec2-54-83-196-7.compute-1.amazonaws.com',
+        'PORT': '5432',
 
+    }
+}
+
+
+
+#Below is direct form heroku's django tutorial
 
 # Parse database configuration from $DATABASE_URL
+#Below must be uncommented before sending to heroku
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.config(default='postgres://vuygnuwnypsoxo:TMSfZa0NBHcukiOBWIVa3oX22d@ec2-54-83-196-7.compute-1.amazonaws.com:5432/d3t845e0bt7t8g')
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

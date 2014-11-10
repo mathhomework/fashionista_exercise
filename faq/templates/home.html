@@ -8,8 +8,17 @@
         <script src="{% static 'js/angular-panel-snap.js' %}"></script>
         <script src="{% static 'js/app.js' %}"></script>
         <script src="{% static 'js/faqController.js' %}"></script>
-
-
+{#onclick="load()" #}
+{#        <script type="text/javascript">#}
+{#            function load()#}
+{#            {#}
+{#                $('#sign_up_form').on("click", function(){#}
+{#                    window.document.sign_up.submit();#}
+{#                    return;#}
+{#                }());#}
+{##}
+{#            }#}
+{#        </script>#}
         <link href ="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css" type="text/css" rel="stylesheet">
         <link href ="{% static 'css/myStyle.css' %}" type="text/css" rel="stylesheet">
 
@@ -158,8 +167,8 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <form id="sign_up_form" action="https://www.stylepuzzle.com" method = "POST">
-                            {% csrf_token %}
+                        <form name="sign_up" id="sign_up_form" action="." method = "POST">
+{#                            {% csrf_token %}#}
                             {{ fashionista_form.as_p }}
                             <input id="btn-submit" type="submit" value="Join" />
                         </form>

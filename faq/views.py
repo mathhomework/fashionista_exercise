@@ -2,9 +2,11 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from django.views.decorators.csrf import csrf_exempt
 from faq.forms import FashionistaForm
 
 
+@csrf_exempt
 def home(request):
     if request.method == 'POST':
         fashionista_form = FashionistaForm(request.POST)
